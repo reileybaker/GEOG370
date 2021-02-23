@@ -23,11 +23,12 @@
     <style>
         #mapid{ width: 900px; height: 500px; }
        </style>
+    
 
        <script>
            var map = L.map('mapid').setView([35.91, -79.05], 17);
            
-           L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' , {}).addTo(map)
+           L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png' , {}).addTo(map)
 
            var uncIcon = L.icon({
                iconUrl: 'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
