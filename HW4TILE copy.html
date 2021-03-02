@@ -79,9 +79,8 @@
 
 
       
-      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      var OSM = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
         maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       }).addTo(map);
       
       
@@ -94,7 +93,7 @@
       });
 
       var Tiles = {
-        "Open Street Map": OSM,
+        "Current Map": OSM,
         "Waxhaw Photo 1969": daPhoto
       };
 
