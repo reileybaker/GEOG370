@@ -1,0 +1,105 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>My First Map</title>
+
+     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+     crossorigin=""/>
+
+     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+     crossorigin=""></script>
+
+ <script src = "./old_well_4326.geojson"></script>
+ 
+
+ </head>
+ <body>
+
+    <div id="mapid"></div>
+    <style>
+        #mapid{ width: 900px; height: 500px; }
+       </style>
+    
+
+       <script>
+           var map = L.map('mapid').setView([35.91, -79.05], 17);
+           
+           L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png' , {}).addTo(map)
+
+           var uncIcon = L.icon({
+               iconUrl: 'https://faopharmacy.unc.edu/files/2018/04/Old-Well-Icon-Example.png',
+               iconSize: [50,50],
+               popupAnchor: [0,0]
+           });
+           
+           var customPopup =  "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>";
+        
+
+            L.geoJSON(uncwell, { // a 
+            pointToLayer: function (feature, latlng) { // b
+            return L.marker(latlng, {icon: uncIcon});}}) // c
+            .bindPopup(customPopup) // d
+            .addTo(map); //
+
+
+
+
+            var kenanIcon = L.icon({
+                iconUrl: 'https://cityprintsmapart.com/wp-content/uploads/2015/08/cs_unc_1.jpg',
+                iconSize: [50,50],
+                popupAnchor: [0,0]
+            });
+
+            var PopupI = "Kenan Stadium<br/><img src = 'https://upload.wikimedia.org/wikipedia/commons/7/70/Kenan_Memorial_Stadium.jpg'width= '100px'/>";
+
+    
+            L.marker([35.9070,-79.0479],{icon:kenanIcon}).addTo(map)
+                .bindPopup(PopupI)
+                //.openPopup();
+
+            
+
+            var wilsonIcon = L.icon({
+                iconUrl: 'https://library.unc.edu/wp-content/uploads/2019/08/wilson2.jpg',
+                iconSize: [50,50],
+                popupAnchor: [0,0]
+            });
+
+            var PopupII = "Wilson Library<br/><img src = 'https://library.unc.edu/wp-content/uploads/2020/04/fearrington-zoom-background-scaled.jpg'width= '100px'/>"
+
+            L.marker([35.9094,-79.0497],{icon:wilsonIcon}).addTo(map)
+                .bindPopup(PopupII)
+                //.openPopup();
+            
+
+            
+            var davisIcon = L.icon({
+                iconUrl: 'https://library.unc.edu/wp-content/uploads/2019/08/davis.jpg',
+                iconSize: [50,50],
+                popupAnchor: [0,0]
+            });
+
+            var PopupIII = "Davis Library<br/><img src = 'https://library.unc.edu/wp-content/uploads/2021/02/012220_davis-_library_covid19_prep041-scaled.jpg'width= '100px'/>"
+
+            L.marker([35.911048,-79.048055],{icon:davisIcon}).addTo(map)
+                .bindPopup(PopupIII)
+                //.openPopup();
+
+
+
+
+
+        
+
+
+       </script>
+
+
+
+    
+ </body>
+ </html>

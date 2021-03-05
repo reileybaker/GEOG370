@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projections</title>
+</head>
+<body>
+    <h1>In this project I learned how to display images in different projections</h1>
+    
+    <h2 style="color:red">Describe in your own words how you displayed the map in different projections using QGIS</h2>
+    <p>In QGIS, I first opened the Globe Builder plug-in, and uploaded data from Natural Earth for the base layer. I 
+        then used Indicatrix mapper, which shows latitude and longitude on my maps, as well as indicatrix circles, which
+        help illustrate the map distortions of different map projections. To change the projection, I changed the EPSG to
+        the six specified for the homework, and two of my own choices. On the projections, indicatrix circles change in area and/or shape to reflect shape and area distortions of the land on the map.
+    <h2>WGS84 Projection</h2>
+    <h3>In this projection, the larger, stretched out circles as you get closer to the poles indicate both distorted shape and area of the map as the absolute value of the longitude increases. </h3>
+    <a href=".//maps/4326.png">
+    <img src=".//maps/4326.png" alt="WGS84" width='500px'>
+    </a>
+    <h2>Aitoff Projection</h2>
+    <h3>In this projection, the circles appear to have roughly the same area, but the map  shape is more distorted as you move away from 0,0. </h3>
+    <a href=".//maps/54043.png">
+    <img src=".//maps/54043.png" alt="Aitoff" width='500px'>
+    </a>
+    <h2>Pseudo Mercator Projection</h2>
+    <h3>In this projection, there is no distortion of shape across the map. The circles on the latitude lines closest to the poles are distorted in area so the land in that area of the map appears larger than it is.  </h3>
+    <a href="./maps/3857.png">
+    <img src="./maps/3857.png" alt="3857" width='500px'>
+    </a>
+    <h2>Winkel Tripel Projection</h2>
+    <h3>In this projection, both area and shape of the circles are slightly distorted.</h3>
+    <a href="./maps/winkel.png">
+    <img src="./maps/winkel.png" alt="Winkel" width='500px'>
+    </a>
+    <h2>Lambert Cylindrical Equal Area Projection </h2>
+    <h3>In this projection, as the name indicates, all circles are equal in area, but are extremely distorted at the north and south poles, implying that the land shape on the map is also distorted. </h3>
+    <a href="./maps/54034.png">
+    <img src="./maps/54034.png" alt="Lambert" width='500px'>
+    </a>
+    <h2>Equidistant Conic Projection</h2>
+    <h3>Because this is a conic projection, the map shape takes on a sort of semi circle. The circles keep their shape for the most part, except for the extreme distortion at the south pole of the map. Area here is also extremely enlargened. As the name implies, this projection accurately preserves distance on the map.</h3>
+    <a href="./maps/conic.png">
+    <img src="./maps/conic.png" alt="Equi Conic" width='500px'>
+    </a>
+    <h2>Azimuthal Equidistant Projection</h2>
+    <h3>This projection is extremely similar to the equidistant conic in that it accurately represents distances on the map. However, the longitudes on this projection are more spaced out, resulting in slightly more shape distortion. </h3>
+    <a href="./maps/Azimuthal.png">
+    <img src="./maps/Azimuthal.png" alt="Azimuthal" width='500px'>
+    </a>
+    <h2>Gall-Peters Projection</h2>
+    <h3>In this projection, there is slight distortion in shape, with the circles on the latitudes closet to the poles appearing horizontally stretched, and all of the other map circles appearing vertically stretched. The areas across the map appear to be very similar, except for those on the latitudes closet to the poles, the circles being greatly enlargened. </h3>
+    <a href="./maps/gallpeters.png">
+    <img src="./maps/gallpeters.png" alt="Gall-Peters" width='500px'>
+    </a>
+    <h2>Sinu-Mollweide Projection</h2>
+    <h3>In this projection, the areas across the map appear to be somewhat preserved, but shape and area distortion are more intense at the poles, as well as moving away from the prime meridian. </h3>
+    <a href="./maps/sinu.png">
+    <img src="./maps/sinu.png" alt="Sinu-Mollweide" width='500px'>
+    </a>
+    <p></p>
+    <h2>Data used for this project</h2>
+    <a href="https://www.naturalearthdata.com/http//www.naturalearthdata.com/download/10m/cultural/ne_10m_admin_0_countries.zip"> Download Natrual Earth 1:10m Cultural Vector </a>
+</body>
+</html>

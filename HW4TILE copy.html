@@ -1,0 +1,113 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Leaflet Preview</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css"
+   integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+   crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+   crossorigin=""></script>
+  <style type="text/css">
+    body {
+       margin: 0;
+       padding: 0;
+    }
+    html, body, #map{
+       width: 100%;
+       height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+      var map = L.map('map').setView([34.935260557403865, -80.74449119457061], 14.0);
+
+
+
+
+      var watertower = L.icon({
+        iconUrl: 'https://www.clipartmax.com/png/middle/90-909090_water-tower-water-tower-clip-art.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+
+      });
+
+      var PopupI = "Waxhaw Water Tower<br/>Like much of the heart of downtown Waxhaw, the Water Tower is a long standing monument that can be seen in both the historical 1969 image and the current streetmap<br/><img src = 'https://s3.amazonaws.com/gs-waymarking-images/66374df1-f19c-411d-a84c-872b2c9fded3.jpg'width= '100px'/>";
+      
+      var watertower = L.marker([34.9256,-80.7444],{icon:watertower}).addTo(map)
+        .bindPopup(PopupI)
+        //.openPopup();
+
+      
+      
+
+      var skatepark = L.icon({
+        iconUrl: 'https://webstockreview.net/images/skate-clipart-skateboard-deck-4.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+      });
+
+      var PopupII = "Waxhaw Skate Park<br/>Since the 1969 photo, the Waxhaw Skate Park was constructed as a part of the David G. Barnes Children's Park<br/><img src = 'https://d2j8c2rj2f9b78.cloudfront.net/uploads/poster-images/Waxhaw-Skatepark.jpg'width= '100px'/>";
+
+      var skatepark = L.marker([34.9240112,-80.7444839],{icon:skatepark}).addTo(map)
+        .bindPopup(PopupII)
+        //.openPopup();
+
+
+
+      
+      var museum = L.icon({
+        iconUrl: 'https://www.pinclipart.com/picdir/middle/525-5256960_free-museums-museum-clipart-png-download.png',
+        iconSize: [50,50],
+        popupAnchor: [0,0]
+      });
+
+      var PopupIII = "Museum of the Waxhaws<br/>The Museum was constructed after the taking of the 1969 historical image<br/><img src = 'https://www.unioncountync.gov/application/files/4214/8287/3368/20140614-waxhaw-north-carolina-jb0176.jpg'width= '100px'/>";
+
+      var museum = L.marker([34.9202778,-80.7344444],{icon:museum}).addTo(map)
+        .bindPopup(PopupIII)
+        //.openPopup();
+
+
+      
+
+
+      
+      var OSM = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+      }).addTo(map);
+      
+      
+      
+      var daPhoto = L.tileLayer('./HW4/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      });
+
+      var Tiles = {
+        "Current Map": OSM,
+        "Waxhaw Photo 1969": daPhoto
+      };
+
+
+      var daVectors = {
+        "Waxhaw Water Tower":watertower,
+        "Waxhaw Skate Park":skatepark,
+        "Museum of the Waxhaws":museum
+      }
+
+
+      L.control.layers(Tiles, daVectors).addTo(map);
+
+
+  </script>
+</body>
+</html>
