@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 10</title>
+</head>
+<body>
+<h1>Homework 10: Geoprocessing Analysis </h1>
+<h2>Reiley Baker</h2>
+<h3>This map displays the intersection of hazardous waste sites and coal mines in the United States to answer the question of whether or not there is correlation between the location of coal mine sites and Superfund sites that have been contaminated with hazardous waste. The map to the left shows each coal site and hazardous waste site, along with where these points intersect. The map to the right shows only these intersections. Based on this data, there does not seem to be much correlation between the two. In regions with high concentrations of coal mines, there does not seem to be a high concentration of hazardous waste sites.</h3>
+<!-- Your map goes here -->
+<a href="both">
+    <img src="bothwinter.png" alt="intersectwboth" width='500px'>
+    </a>
+
+<a href="justintersect">
+    <img src="intersect.png" alt="intersect" width='500px'>
+    </a>
+
+<h3>The map below shows the initial shapefile that I downloaded, which is divided into counties. </h3>
+<!-- Your map goes here -->
+<a href="beforedissolve">
+    <img src="Screen Shot 2021-04-07 at 12.48.53 PM.png" alt="b4dissolve" width='500px'>
+    </a>
+
+<h3>I then used the dissolve tool to combine the counties into each of the states, seen below. </h3>
+<!-- Your map goes here -->
+<a href="afterdissolve">
+    <img src="Screen Shot 2021-04-07 at 12.49.23 PM.png" alt="afterdissolve" width='500px'>
+    </a>
+
+
+<h3>Next, I added the hazardous waste sites shapefile and the coal mine sites shapefile. I used the buffer tool to add a .3 meter buffer around each point. </h3>
+<!-- Your map goes here -->
+<a href="justbuffers">
+    <img src="buffers.png" alt="justbuffers" width='500px'>
+    </a>
+
+<h3>Lastly, I used the intersect tool to find where the hazardous waste site points and coal mine points intersected, as seen in the top two maps.</h3>
+
+
+<!-- Link to your shapefile in Github and you CSV -->
+<h2>Data used for this project</h2>
+    <a href="https://sedac.ciesin.columbia.edu/data/set/superfund-atsdr-hazardous-waste-site-ciesin-mod-v2"> Hazardous Waste Sites Shapefile Source</a>
+    <p></p>
+    <a href="https://www.eia.gov/maps/layer_info-m.php">Coal Mines Shapefile Source</a>
+    <p></p>
+    <a href="https://gadm.org/download_country_v3.html">US Counties Shapefile Source</a>
+
+</body>
+</html>
